@@ -1,0 +1,20 @@
+//java8 features
+
+//getting list with any match condition with model object
+Let's take an example 
+1)I have role of list with is having mapping with user . I want to validate that user having admin role or not
+Syntax is given below:-
+user.getUserRoles().stream().anyMatch(item -> "1".equals(item.getId().toString()))
+
+How to compare that user exist into among 3 categatries or not
+Syntax is given below:-
+2)user.getUserRoles().stream().anyMatch(item -> item.getId().toString().equals(Constants.ONE_STRING)|| item.getId().toString().equals(Constants.TWO_STRING)|| item.getId().toString().equals(Constants.THREE_STRING));
+
+3)
+How to compare two list with element exist into another or not
+Sysntax is given below:-
+
+unavailableList = allUsers
+				.stream().filter(e -> (userList.stream().filter(d -> d.getUserid().toString().equals(e.getUserNumber() + "")).count()) < 1)
+				.collect(Collectors.toList());
+        
